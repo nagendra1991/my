@@ -9,7 +9,6 @@ RUN yum install -y java-1.8.0-openjdk-headless && \
     mkdir /home/jenkins/.m2 &&\
     yum install sudo -y && \
     echo "%wheel        ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers
-COPY .ssh/authorized_keys /home/jenkins/.ssh/authorized_keys
 RUN chown -R jenkins:jenkins /home/jenkins/.m2/ && \
     chown -R jenkins:jenkins /home/jenkins/.ssh/
 ENV JAVA_HOME /etc/alternatives/jre
