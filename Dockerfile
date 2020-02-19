@@ -7,7 +7,6 @@ RUN yum install -y java-1.8.0-openjdk-headless && \
     useradd -u 1000 -m -s /bin/bash jenkins -G wheel && \
     echo "jenkins:jenkins" | chpasswd && \
     mkdir /home/jenkins/.m2
-ADD settings.xml /home/jenkins/.m2/
 COPY .ssh/authorized_keys /home/jenkins/.ssh/authorized_keys
 RUN chown -R jenkins:jenkins /home/jenkins/.m2/ && \
     chown -R jenkins:jenkins /home/jenkins/.ssh/
